@@ -333,6 +333,9 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
+   @media screen and (max-width: 768px - 1) {
+   bottom: -50px;
+  }
 }
 .logo-spacer {
   height: 100vh;
@@ -395,6 +398,7 @@ export default {
   }
   @media screen and (max-width: 768px - 1) {
     justify-content: center;
+    padding-bottom: 110px;
   }
   // flex: 1;
 }
