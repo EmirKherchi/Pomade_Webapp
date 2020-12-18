@@ -133,7 +133,7 @@ export default {
           },
           onUpdate: () => {
             const y = this.resize.height - this.mainTextMiddle;
-            console.log(y);
+            // console.log(y);
             gsap.set(this.$refs.navigator.$el, {
               y: this.resize.height - y * helper.y
             });
@@ -417,6 +417,7 @@ export default {
   }
 }
 .cta {
+  display: none;
   margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;

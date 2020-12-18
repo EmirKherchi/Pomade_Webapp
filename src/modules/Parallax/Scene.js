@@ -11,7 +11,12 @@ export default class Scene {
     },
     onEnter = () => {},
     onProgress = () => {
-      if (this.progress == 1) {
+      let w = window.innerWidth;
+      // console.log(this.progress);
+
+      if (w < 768 && this.progress > 0.998) {
+        console.log("here push router");
+      } else if (w > 768 && this.progress == 1) {
         router.push("/work");
       }
     },
