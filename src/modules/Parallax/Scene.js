@@ -1,3 +1,4 @@
+import router from "../../router";
 export default class Scene {
   constructor({
     triggerHook = 0,
@@ -10,9 +11,11 @@ export default class Scene {
     },
     onEnter = () => {},
     onProgress = () => {
-      // console.log(this.progress);
+      if (this.progress == 1) {
+        router.push("/work");
+      }
     },
-    onLeave = () => {}
+    onLeave = () => {},
   }) {
     this.triggerHook = triggerHook;
     this.triggerElement = triggerElement;
@@ -23,7 +26,7 @@ export default class Scene {
     this.state;
     this.bounds = {
       top: 0,
-      bottom: 0
+      bottom: 0,
     };
     if (timeline) {
       this.timeline = timeline;
