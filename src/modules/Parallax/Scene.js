@@ -1,3 +1,5 @@
+
+import router from "../../router";
 export default class Scene {
   constructor({
     triggerHook = 0,
@@ -10,7 +12,11 @@ export default class Scene {
     },
     onEnter = () => {},
     onProgress = () => {
-      // console.log(this.progress);
+      console.log(this.progress);
+      if (this.progress > 0.999) {
+        setTimeout(function(){ router.push("/work"); }, 500);
+        
+      }
     },
     onLeave = () => {}
   }) {
