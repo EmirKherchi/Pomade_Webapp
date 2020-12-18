@@ -16,6 +16,7 @@ export default class Scene {
 
       if (w < 768 && this.progress > 0.998) {
         console.log("here push router");
+        router.push("/work");
       } else if (w > 768 && this.progress == 1) {
         router.push("/work");
       }
