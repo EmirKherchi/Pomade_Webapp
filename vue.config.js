@@ -1,21 +1,22 @@
 const webpack = require("webpack");
 
 module.exports = {
+  publicPath: "",
   productionSourceMap: false,
   configureWebpack: {
     plugins: [
       new webpack.ProvidePlugin({
-        THREE: "three"
-      })
+        THREE: "three",
+      }),
     ],
     module: {
       rules: [
         {
           test: /\.(glsl|vs|fs|vert|frag)$/,
           exclude: /node_modules/,
-          use: ["raw-loader", "glslify-loader"]
-        }
-      ]
-    }
-  }
+          use: ["raw-loader", "glslify-loader"],
+        },
+      ],
+    },
+  },
 };
